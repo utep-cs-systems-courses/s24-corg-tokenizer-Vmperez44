@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include <stdio.h>
 #include "tokenizer.h"
 
@@ -47,14 +48,14 @@ int count_tokens(char *str){
 
 }
 
-char *copy_str(char inStr, short len){
+char *copy_str(char *inStr, short len){
 
   char *copy = malloc((len+1) * sizeof(char));
 
-  for (int i = 0; i<len; i++){
+  for (short i = 0; i<len; i++){
     copy[i] = inStr[i];
   }
-  copy[i] = '\0';
+  copy[len] = '\0';
   return copy;
 
 }
@@ -87,7 +88,7 @@ void print_tokens(char **tokens){
 
 }
 
-void free_tokens(char tokens){
+void free_tokens(char **tokens){
 
   int i =0;
   while(tokens[i]){
