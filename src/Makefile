@@ -1,6 +1,8 @@
 tokenizer: history.o tokenizer.o uimain.o
 	gcc -o tokenizer history.o tokenizer.o uimain.o
 
+all: tokenizer
+
 history.o: history.h history.c
 
 tokenizer.o: tokenizer.h tokenizer.c
